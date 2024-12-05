@@ -1,0 +1,166 @@
+/* Style global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000; /* Fond noir */
+    overflow: hidden;
+}
+
+/* Style pour la section Intro */
+.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(10, 10, 10); /* Fond orange */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Toujours au-dessus du contenu */
+}
+
+.intro-content {
+    text-align: center;
+    color: #fff; /* Texte blanc */
+    font-family: Arial, sans-serif;
+}
+
+.intro-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.intro-content h2, .intro-content h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.intro-content button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: #fff; /* Fond blanc */
+    color: orange; /* Texte orange */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.intro-content button:hover {
+    background-color: #ffe5b4; /* Couleur plus claire au survol */
+}
+
+/* Style pour le lecteur audio */
+.audio-container {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999; /* Juste en dessous de la section intro */
+    padding: 10px;
+    
+    border-radius: 10px;
+    text-align: center;
+    width: auto;
+}
+
+.audio-container audio {
+    width: 300px; /* Largeur du lecteur audio */
+    border-radius: 5px;
+}
+
+/* Style pour le slider */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 600px;
+    background: #1a1a1a; /* Fond gris foncé */
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.container .slide .item {
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 140, 0, 0.5);
+    border: 5px solid rgb(12, 11, 10);
+    background-position: 50% 50%;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+.slide .item:nth-child(1),
+.slide .item:nth-child(2) {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide .item:nth-child(3) {
+    left: 50%;
+}
+
+.slide .item:nth-child(4) {
+    left: calc(50% + 220px);
+}
+
+.slide .item:nth-child(5) {
+    left: calc(50% + 440px);
+}
+
+.slide .item:nth-child(n + 6) {
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+.item .content {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: #fff; /* Texte blanc */
+    transform: translate(0, -50%);
+    font-family: system-ui;
+    display: none;
+}
+
+.button {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.button button {
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: 2px solid orange;
+    cursor: pointer;
+    margin: 0 5px;
+    background: transparent;
+    color: orange;
+    transition: 0.3s;
+}
+
+.button button:hover {
+    background: orange;
+    color: #000;
+}
